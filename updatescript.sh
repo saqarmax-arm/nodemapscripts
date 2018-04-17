@@ -1,5 +1,5 @@
 #!/bin/bash
-remotehost=seednodeIP
+remotehost=cronserver
 jsonpath=~/tmp/qtumpeerinfo.json
 /usr/local/bin/qtum-cli getpeerinfo > ~/tmp/qtumpeerinfo.json
 scp $jsonpath node@$remotehost:~/data/qtumpeerinfo0.json
