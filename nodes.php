@@ -22,7 +22,7 @@ if ($cache->fetch($updatingKey) !== false) {
 $cache->save($updatingKey, true);
 
 _log('start fetching ips');
-$files = glob('/data/qtumpeerinfo*.json');
+$files = glob('/data/ccspeerinfo*.json');
 $uniqueIps = [];
 foreach ($files as $file) {
     $nodes = json_decode(file_get_contents($file));
@@ -79,7 +79,7 @@ function _log() {
 function getIpData($ip)
 {
     try {
-        $ch = curl_init('http://freegeoip.net/json/' . $ip);
+        $ch = curl_init('https://freegeoip.app/json/' . $ip);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $geoInfo = curl_exec($ch);
         curl_close($ch);
