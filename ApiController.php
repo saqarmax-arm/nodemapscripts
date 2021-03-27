@@ -42,7 +42,7 @@
     private function getIpData($ip)
     {
         try {
-            $ch = curl_init('http://freegeoip.net/json/' . $ip);
+            $ch = curl_init('https://freegeoip.app/json/' . $ip);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $geoInfo = curl_exec($ch);
             curl_close($ch);
